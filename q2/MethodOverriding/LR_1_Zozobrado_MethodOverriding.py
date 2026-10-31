@@ -1,7 +1,11 @@
 
 class Animal:
     def __init__(self, name):
-        self.name = name
+        self.__name = name
+
+    @property
+    def name(self):
+        return self.__name
 
     def eat(self):
         print(self.name + " eats food.")
@@ -20,7 +24,7 @@ class Lion(Animal):
 
 class Elephant(Animal):
     def eat(self):
-        print(self.name + " eats grass and fruits.") 
+        print(self.name + " eats grass and fruits.")
 
     def make_sound(self):
         print(self.name + " trumpets.")
@@ -40,6 +44,7 @@ animals = [
     Elephant("Dumbo"),
     Monkey("George")
 ]
+
 
 for animal in animals:
     animal.make_sound()
